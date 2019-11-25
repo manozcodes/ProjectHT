@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="overlape">
+            <div class="block no-padding">
+                <div data-velocity="-.1" style="background: url({% static 'images/resource/k.jpg' %}) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div>
+                <div class="container fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="blog-header">
+                                <p>Let the world know your travel story.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mb-5">
+            <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-8 column">
+                    <div class="site-info">
+                        <h3>
+                            <center>Whoo...</center>
+                        </h3>
+                        <p>
+                            <center style="border: 1px solid #fb236a; padding: 2px;">You are in the right way!</center>
+                        </p>
+                        <p class="about-us-p">
+                            Life is fill with moments and memories. Let your experience determine, how well you enjoyed your life.
+                        </p>
+                        <h5>
+                            <center><b>Share Now</b></center><br>
+                        </h5>
+                        <div class="contact-form">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <span class="pf-title"><b>Full Name</b></span>
+                                        <div class="pf-field">
+                                            <input type="text" placeholder="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title"><b>Email Address</b></span>
+                                        <div class="pf-field">
+                                            <input type="text" placeholder="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title"><b>Phone/Mobile Number</b></span>
+                                        <div class="pf-field">
+                                            <input type="tel" placeholder="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title"><b>Your Profile Image</b></span>
+                                        <div class="pf-field">
+                                            <input type="file" name="pic" accept="image/*">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-12 mb-3">
+                                        <span class="pf-title"><b>Story Category</b></span>
+                                        <div class="pf-field">
+                                            <select name="category">
+                                                <option value="hiking"><b>Hiking</b></option>
+                                                <option value="trekking"><b>Trekking</b></option>
+                                                <option value="others"><b>Others</b></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title"><b>Write Story</b></span>
+                                        <div class="pf-field">
+                                            <textarea></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span class="pf-title"><b>Upload From File</b></span>
+                                        <div class="pf-field">
+                                            <input type="file" name="file">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <button type="submit"><b>Send</b></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                </div>
+        </section>
+        {% endblock %}
