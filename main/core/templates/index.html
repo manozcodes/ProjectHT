@@ -11,7 +11,7 @@
                         <h3><strong>Hike, While You Can.</strong></h3>
                         <form action="{% url 'search' %}">
                             <div class="field-lct">
-                                <input type="text" placeholder="Search Destinations.." />
+                                <input type="text" placeholder="Search Destinations.." name="query"/>
                             </div>
                             <button type="submit"><i class="la la-search"></i></button>
                         </form>
@@ -37,18 +37,20 @@
         <div class="row destination-slider-list">
             <div class="col-12">
                 <div class="owl-carousel destination-slider">
+                    {% for dest in object_list %}
                     <div class="list-ccard">
                         <div class="img">
-                            <a href="{% url 'destination' %}"><img src="{% static 'images/slider/one.jpg' %}" alt="image alt" /></a>
+                            <a href="{{ dest.get_absolute_url }}"><img src="{{ dest.dest_slider_image.url }}" class="img" alt="image alt" /></a>
                         </div>
                         <div class="dest-slider-info-main">
                             <div class="dest-slider-info mt-1">
-                                <a href="destination.html">Phulchowki</a>
+                                <a href="destination.html">{{ dest.dest_slider_title }}</a>
                             </div>
-                            <p>7 KM east from Lalitpur</p>
+                            <p>{{ dest.dest_slider_subtitle }}</p>
                         </div>
                     </div>
-                    <div class="list-ccard">
+                    {% endfor %}
+<!--                     <div class="list-ccard">
                         <div class="img">
                             <img src="{% static 'images/slider/two.jpg' %}" alt="image alt" />
                         </div>
@@ -58,8 +60,8 @@
                             </div>
                             <p>2 KM North-East from Kritipur</p>
                         </div>
-                    </div>
-                    <div class="list-ccard">
+                    </div> -->
+<!--                     <div class="list-ccard">
                         <div class="img">
                             <img src="{% static 'images/slider/one.jpg' %}" alt="image alt" />
                         </div>
@@ -102,7 +104,7 @@
                             </div>
                             <p>7 KM east from Lalitpur</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -125,9 +127,11 @@
                                     <center>Get trekking deals and offers directly to your mailbox. </center>
                                 </p>
                                 <div>
-                                    <form action="">
+                                    <form action="" method="POST" autocomplete="off">
+                                        {% csrf_token %}
                                         <div class="field-lct">
                                             <input type="text" placeholder="Enter Your Email Address" />
+
                                         </div>
                                         <button type="submit"><i class="la la-paper-plane"></i></button>
                                     </form>

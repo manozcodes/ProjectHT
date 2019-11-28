@@ -13890,7 +13890,7 @@ li.active a:hover {
 }
 
 .img {
-    border-bottom: 3px solid #26ae61;
+    border-bottom: 2px solid #26ae61;
 }
 
 @media screen and (max-width:800px) {

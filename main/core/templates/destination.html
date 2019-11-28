@@ -3,15 +3,15 @@
 {% block content %}
 <section class="overlape">
             <div class="block no-padding">
-                <div data-velocity="-.1" style="background: url({% static 'images/resource/c.jpg' %}) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div>
+                <div data-velocity="-.1" style="background: url({{ object.dest_profile_image.url }}) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div>
                 <div class="container fluid">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="inner-header">
-                                <h3 class="dest-title">ChampaDevi</h3>
+                                <h3 class="dest-title">{{ object.dest_profile_title }}</h3>
                                 <div class="job-statistic">
                                     <span>SHORT HIKE</span>
-                                    <p><i class="la la-map-marker"></i>Kathmandu, Nepal</p>
+                                    <p><i class="la la-map-marker"></i>{{ object.dest_location }}</p>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +33,8 @@
                 <div class="cand-details-sec mt-5">
                     <div class="row">
                         <div class="col-lg-8 column">
-                            <h3 id="h">Destination Highlights</h3>
+                            {{ object.dest_content  }}
+                       <!--      <h3 id="h">Destination Highlights</h3>
                             <p>
                                  This is third highest hill around Kathmandu valley, which is at the height of 2278 meter.
                                  Enjoy fantastic aerial views of Historical places like Bugmati, Khokana, Pharping and also Bagmati River.
@@ -156,7 +157,7 @@
                                  You can visit the Champadevi Temple revered by both Hindus and Buddhists.
                                  Well maintained walking trail with stone steps
                             </p><br>
-                            </section>
+                            </section> -->
                         </div>
                         <div class="col-lg-4 column">
                             <div class="sticky-sidebar">
