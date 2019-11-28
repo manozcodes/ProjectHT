@@ -9,6 +9,7 @@ BASE_DIR = os.path.dirname(
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+MEDIA_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = config('SECRET_KEY')
 
@@ -23,6 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'tinymce',
+    'phone_field',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +51,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -61,10 +65,17 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'talk2manoz@gmail.com'
+EMAIL_HOST_PASSWORD = 'Imaginew00rld'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR]
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
 VENV_PATH = os.path.dirname(BASE_DIR)
 STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(VENV_PATH, 'media')
+MEDIA_PATH = os.path.dirname(MEDIA_DIR)
+MEDIA_ROOT = os.path.join(MEDIA_PATH, 'media')
